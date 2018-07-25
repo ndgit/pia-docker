@@ -1,12 +1,12 @@
 #!/bin/bash
 set -e
 
-export PGPASSWORD=$DATABASE_PASSWORD
-until psql -h "${DATABASE_HOST}" -U "${DATABASE_USERNAME}" -l
-do
-  echo "We are waiting for postgresql, please wait."
-  sleep 1
-done
+#export PGPASSWORD=$DATABASE_PASSWORD
+#until psql -h "${DATABASE_HOST}" -U "${DATABASE_USERNAME}" -l
+#do
+#  echo "We are waiting for postgresql, please wait."
+#  sleep 1
+#done
 
 RAILS_ENV=production bin/rake db:create
 RAILS_ENV=production bin/rake db:migrate
