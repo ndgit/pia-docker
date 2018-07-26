@@ -8,7 +8,7 @@ set -e
 #  sleep 1
 #done
 
-RAILS_ENV=production bin/rake db:create
+#RAILS_ENV=production bin/rake db:create
 RAILS_ENV=production bin/rake db:migrate
 
 if [ -z "$1" ]; then
