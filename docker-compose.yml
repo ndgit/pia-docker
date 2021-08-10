@@ -26,7 +26,13 @@ services:
 
   database:
     container_name: LINCnil-pia-db
-    image: postgres:10.3
+    image: postgres
     restart: always
     environment:
       POSTGRES_PASSWORD: 'somepassword'
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8081:8080

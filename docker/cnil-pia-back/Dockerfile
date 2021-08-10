@@ -1,4 +1,4 @@
-FROM ruby:2.5.1-stretch
+FROM ruby:2.6
 ENV DEBIAN_FRONTEND noninteractive
 
 RUN apt-get update \
@@ -14,7 +14,7 @@ COPY application.yml /var/www/config/application.yml
 
 WORKDIR /var/www/
 
-RUN bundle install
+RUN gem install bundler && bundle install
 
 COPY entrypoint /entrypoint
 RUN chmod +x /entrypoint
